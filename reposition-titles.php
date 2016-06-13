@@ -61,7 +61,7 @@ function reposition_entry_title() {
    	if( is_404() ) {
    		add_action( 'genesis_after_header', 'gd_404_title', 16 );
    		function gd_404_title() {
-    		echo '<h1 class="entry-title" itemprop="headling">Page not found!</h1>';
+    			echo '<h1 class="entry-title" itemprop="headling">Page not found!</h1>';
    		}
    	}
     
