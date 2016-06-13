@@ -8,9 +8,6 @@
  
 add_action( 'genesis_before', 'reposition_entry_title' );
 function reposition_entry_title() {
-
-	//* Don't reposition on front-page (optional)
-	if( is_front_page() ) : return;
 	
   	//* Reposition the breadcrumbs
   	remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
