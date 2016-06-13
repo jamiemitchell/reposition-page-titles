@@ -28,25 +28,25 @@ function reposition_entry_title() {
 	  	function genesis_do_post_title_open() {
 	  	
 	  	//* Check for Genesis Subtitles plugin
-	    global $post;
-	    $subtitle = get_post_meta( $post->ID, '_ahjira_subtitle', TRUE );
+	    	global $post;
+	    	$subtitle = get_post_meta( $post->ID, '_ahjira_subtitle', TRUE );
 	
-	    //* Use featured image as page-title backround image (optional)
-	    if (has_post_thumbnail( $post->ID ) ) {
-	    	$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
+	    	//* Use featured image as page-title backround image (optional)
+	    	if (has_post_thumbnail( $post->ID ) ) {
+	    		$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
 			$style = ' style="background-image: url(' . $image[0] . ');" ';
 		}
 	
-	    //* Add has-subtitle class if page has subtitle
-	    if( !empty( $subtitle ) ) {
+	    	//* Add has-subtitle class if page has subtitle
+	    	if( !empty( $subtitle ) ) {
 		  	echo '<div class="page-title has-subtitle"' . $style . '><div class="wrap">'; 
 		} else {
 	    		echo '<div class="page-title"' . $style . '><div class="wrap">'; 
 		}
 	
-	    //* Add the closing HTML
-	    add_action( 'genesis_after_header', 'genesis_do_post_title_close', 18 );
-	    function genesis_do_post_title_close() {
+	    	//* Add the closing HTML
+	    	add_action( 'genesis_after_header', 'genesis_do_post_title_close', 18 );
+	    	function genesis_do_post_title_close() {
 			echo '</div></div>';
 	  	}
 	
